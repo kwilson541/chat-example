@@ -12,7 +12,7 @@ app.get('/', function(req, res){
 // Listen on the connection event for incoming sockets
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
-    console.log('message: ' + msg);
+    io.emit('chat message', msg);
   });
 });
 
